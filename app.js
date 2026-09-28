@@ -138,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const classicChips = document.querySelectorAll('.classic-chip');
 
   // Step 1: Phone Elements
+  const formHeading = document.getElementById('form-heading');
   const formSubNote = document.getElementById('form-sub-note');
   const targetCashbackText = document.getElementById('target-cashback-text');
   const submitBtnText = document.getElementById('submit-btn-text');
@@ -213,11 +214,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (dealSavings) dealSavings.textContent = deal.savings;
 
     // Right Side Callouts
+    if (formHeading) {
+      formHeading.textContent = `Claim ${deal.cashbackAmount} Cash 💸`;
+    }
     if (targetCashbackText) {
       targetCashbackText.textContent = `${deal.cashbackAmount} ${deal.storeName} Cashback`;
     }
     if (submitBtnText) {
-      submitBtnText.textContent = `Activate Cashback & Proceed to ${deal.storeName}`;
+      submitBtnText.textContent = `Unlock ${deal.cashbackAmount} & Go to ${deal.storeName} ⚡`;
     }
 
     // Update store name inside accordion dropdowns
@@ -611,7 +615,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add(`mode-${mode}`);
 
     if (submitBtnText) {
-      submitBtnText.textContent = `Activate Cashback & Proceed to ${STATE.currentDeal.storeName}`;
+      submitBtnText.textContent = `Unlock ${STATE.currentDeal.cashbackAmount} & Go to ${STATE.currentDeal.storeName} ⚡`;
     }
 
     headerLayoutBtns.forEach(b => {

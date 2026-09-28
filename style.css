@@ -112,65 +112,60 @@ body {
 }
 
 /* ==========================================
-   Outclick Top Banner
+   Funky Gen-Z Infinite Marquee Ticker
    ========================================== */
-.outclick-banner {
-  background: linear-gradient(90deg, #0d1527 0%, #1e1b4b 50%, #0d1527 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+.funky-marquee-bar {
+  background: #0f172a;
+  background-image: linear-gradient(90deg, #090d16 0%, #1e1b4b 50%, #090d16 100%);
+  border-bottom: 2px solid #000000;
   color: #ffffff;
-  padding: 9px 16px;
-  font-size: 0.85rem;
+  padding: 8px 0;
+  overflow: hidden;
+  white-space: nowrap;
   position: relative;
-  z-index: 30;
+  z-index: 25;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  user-select: none;
 }
 
-.outclick-banner-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
+.marquee-track {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marqueeRoll 28s linear infinite;
 }
 
-.store-badge-tiny {
+.funky-marquee-bar:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeRoll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-item {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  padding: 3px 10px;
-  border-radius: 9999px;
-  font-weight: 600;
-  font-size: 0.78rem;
-  letter-spacing: 0.02em;
-  backdrop-filter: blur(6px);
-}
-
-.pulse-dot {
-  width: 7px;
-  height: 7px;
-  background: #00f5a0;
-  border-radius: 50%;
-  animation: pulseDot 1.6s infinite;
-}
-
-@keyframes pulseDot {
-  0% { transform: scale(0.9); opacity: 0.7; }
-  50% { transform: scale(1.35); opacity: 1; box-shadow: 0 0 10px #00f5a0; }
-  100% { transform: scale(0.9); opacity: 0.7; }
-}
-
-.banner-text {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   color: #e2e8f0;
+  padding: 0 12px;
 }
 
-.text-highlight {
-  background: linear-gradient(90deg, #ff9800, #ff5722, #ff3e6c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.marquee-item strong {
+  color: #00f5a0;
   font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.marquee-sep {
+  color: #ff3e6c;
+  font-size: 0.72rem;
+  opacity: 0.9;
 }
 
 /* ==========================================
@@ -1491,6 +1486,173 @@ body {
 }
 
 /* ========================================================
+   FUNKY & GEN-Z NEO-POP DESIGN SYSTEM
+   ======================================================== */
+
+/* Funky Neo-Brutalist Pop Cards */
+.funky-card {
+  border: 2px solid #0f172a !important;
+  box-shadow: 6px 6px 0px #0f172a, 0 16px 36px -10px rgba(139, 92, 246, 0.15) !important;
+  border-radius: 22px !important;
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  position: relative;
+  background: #ffffff !important;
+}
+
+.funky-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px #0f172a, 0 20px 44px -8px rgba(139, 92, 246, 0.22) !important;
+}
+
+/* Funky Stickers & Badges */
+.funky-pill-tag {
+  background: #dcfce7 !important;
+  border: 1.5px solid #0f172a !important;
+  color: #15803d !important;
+  font-weight: 800 !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.04em !important;
+  box-shadow: 2px 2px 0px #0f172a !important;
+}
+
+.funky-sticker-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #ffedd5;
+  border: 1.5px solid #0f172a;
+  color: #ea580c;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  box-shadow: 2px 2px 0px #0f172a;
+  transform: rotate(2deg);
+  letter-spacing: 0.03em;
+}
+
+.funky-img-frame {
+  border: 2px solid #0f172a !important;
+  border-radius: 16px !important;
+  box-shadow: 3px 3px 0px #0f172a !important;
+  background: #ffffff !important;
+}
+
+.funky-tilt-badge {
+  transform: rotate(-4deg) !important;
+  border: 1.5px solid #0f172a !important;
+  box-shadow: 2px 2px 0px #0f172a !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.funky-title {
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  color: #0f172a !important;
+}
+
+/* Funky Price Breakdown Card */
+.funky-price-card {
+  border: 2px solid #0f172a !important;
+  border-radius: 16px !important;
+  background: #fdfbf7 !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03) !important;
+}
+
+.funky-savings-badge {
+  background: #dcfce7 !important;
+  border: 1.5px solid #0f172a !important;
+  color: #15803d !important;
+  font-weight: 800 !important;
+  border-radius: 8px !important;
+  padding: 4px 10px !important;
+  box-shadow: 2px 2px 0px #0f172a !important;
+  transform: rotate(-1deg);
+}
+
+/* Funky Heading in Action Card */
+.funky-main-heading {
+  font-weight: 900 !important;
+  font-size: 1.52rem !important;
+  letter-spacing: -0.03em !important;
+  color: #0f172a !important;
+}
+
+/* Funky High-Contrast Input Group */
+.funky-input-group {
+  border: 2.5px solid #0f172a !important;
+  border-radius: 14px !important;
+  box-shadow: 4px 4px 0px #0f172a !important;
+  transition: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.funky-input-group:focus-within {
+  border-color: #ff5722 !important;
+  box-shadow: 5px 5px 0px #ff5722 !important;
+  transform: translate(-1px, -1px) !important;
+}
+
+/* Funky Chunky 3D CTA Button */
+.btn-funky-cta {
+  background: linear-gradient(135deg, #ff5722 0%, #ff3e6c 100%) !important;
+  border: 2.5px solid #0f172a !important;
+  border-radius: 14px !important;
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+  box-shadow: 4px 4px 0px #0f172a, 0 8px 24px rgba(255, 62, 108, 0.3) !important;
+  padding: 14px 20px !important;
+  transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.btn-funky-cta:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 6px 6px 0px #0f172a, 0 12px 28px rgba(255, 62, 108, 0.4) !important;
+}
+
+.btn-funky-cta:active {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 1px 1px 0px #0f172a !important;
+}
+
+/* Funky Gen-Z Trust Tags */
+.funky-trust-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.f-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #f8fafc;
+  border: 1.5px solid #0f172a;
+  border-radius: 9999px;
+  padding: 4px 10px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #0f172a;
+  box-shadow: 2px 2px 0px #0f172a;
+  user-select: none;
+}
+
+.funky-signup-link {
+  color: #ff3e6c !important;
+  font-weight: 800 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+}
+
+.funky-signup-link:hover {
+  color: #e11d48 !important;
+}
+
+/* ========================================================
    OTP VERIFICATION SCREEN
    ======================================================== */
 .otp-view-header {
@@ -2297,6 +2459,45 @@ body.mode-mobile .acc-guarantee-item strong {
 
 body.mode-mobile .acc-guarantee-item p {
   font-size: 0.68rem !important;
+}
+
+body.mode-mobile .funky-marquee-bar {
+  padding: 5px 0 !important;
+}
+
+body.mode-mobile .marquee-item {
+  font-size: 0.68rem !important;
+  padding: 0 8px !important;
+}
+
+body.mode-mobile .funky-card {
+  box-shadow: 3px 3px 0px #0f172a !important;
+  border-radius: 14px !important;
+}
+
+body.mode-mobile .funky-main-heading {
+  font-size: 1.22rem !important;
+}
+
+body.mode-mobile .funky-input-group {
+  box-shadow: 2.5px 2.5px 0px #0f172a !important;
+}
+
+body.mode-mobile .btn-funky-cta {
+  padding: 10px 14px !important;
+  font-size: 0.94rem !important;
+  box-shadow: 2.5px 2.5px 0px #0f172a !important;
+}
+
+body.mode-mobile .funky-trust-badges {
+  gap: 5px !important;
+  margin-top: 8px !important;
+}
+
+body.mode-mobile .f-badge {
+  font-size: 0.66rem !important;
+  padding: 2px 7px !important;
+  box-shadow: 1.5px 1.5px 0px #0f172a !important;
 }
 
 /* 3. Tracking Guarantees (Below the Phone Card) */
