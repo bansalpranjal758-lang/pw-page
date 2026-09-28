@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" fill="none" class="pw-logo-svg">
+  <defs>
+    <linearGradient id="pwOrangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7A30"/>
+      <stop offset="100%" stop-color="#F2510E"/>
+    </linearGradient>
+    <filter id="glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Text 'Paisa' in bold white/light text -->
+  <text x="10" y="44" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-weight="800" font-size="34" fill="#FFFFFF" letter-spacing="-0.5">Paisa</text>
+  
+  <!-- Text 'Wapas' in vibrant gradient orange -->
+  <text x="104" y="44" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-weight="800" font-size="34" fill="url(#pwOrangeGrad)" letter-spacing="-0.5">Wapas</text>
+  
+  <!-- Dynamic Cashback Swoosh / Smile above 'apas' -->
+  <path d="M 195 24 C 210 16, 222 22, 228 32 C 224 29, 218 25, 206 28" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="228,34 233,26 223,28" fill="#FFFFFF" />
+
+  <!-- .com in subtle white -->
+  <text x="206" y="52" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-weight="700" font-size="11" fill="#E2E8F0" letter-spacing="0.2">.com</text>
+  
+  <!-- Small spark/rupee accent -->
+  <circle cx="204" cy="20" r="2.5" fill="#FFC107"/>
+</svg>

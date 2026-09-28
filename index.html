@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>PaisaWapas - Activate Cashback & Proceed to Store</title>
+  <meta name="description" content="Link your PaisaWapas account phone number to activate and track your cashback before shopping on Flipkart and 850+ partner stores.">
+  
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="mode-web">
+
+  <!-- Ambient lighting backgrounds -->
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-3" aria-hidden="true"></div>
+
+  <!-- Global Header Bar (PaisaWapas on top) -->
+  <header class="pw-header" id="pw-header">
+    <div class="pw-header-inner">
+      <a href="https://www.paisawapas.com" target="_blank" rel="noopener" class="pw-logo-link" title="PaisaWapas Home">
+        <img src="assets/logo.svg" alt="PaisaWapas.com Cashback & Coupons" class="pw-logo" width="180" height="42">
+      </a>
+
+      <!-- Clean Destination Indicator in Header -->
+      <div class="header-destination-badge" id="header-dest-badge">
+        <span class="pulse-dot"></span>
+        <span class="dest-label">Destination:</span>
+        <strong id="banner-store-name" class="dest-store-name">Flipkart</strong>
+        <span id="banner-cashback-highlight" style="display: none;">₹1,650 Extra Cashback</span>
+      </div>
+
+      <!-- Quick Switcher in header: Web vs Mobile -->
+      <div class="header-nav-actions">
+        <div class="layout-toggle-pill">
+          <button type="button" class="layout-btn active" data-mode="web" id="btn-mode-web" title="Web Desktop View">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <span>Web</span>
+          </button>
+          <button type="button" class="layout-btn" data-mode="mobile" id="btn-mode-mobile" title="Mobile View">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            <span>Mobile</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main View Container -->
+  <main class="page-container" id="page-container">
+    
+    <!-- Smartphone Device Shell (Activates realistic phone frame in Mobile View) -->
+    <div class="device-frame-shell" id="device-frame-shell">
+      
+      <!-- Realistic Mobile Status Bar (visible in Mobile View) -->
+      <div class="device-status-bar" id="device-status-bar" aria-hidden="true">
+        <span class="status-time">9:41</span>
+        <div class="dynamic-island-notch">
+          <span class="island-camera"></span>
+        </div>
+        <div class="status-right-icons">
+          <span class="signal-bars">5G</span>
+          <span class="wifi-icon">📶</span>
+          <span class="battery-icon">🔋</span>
+        </div>
+      </div>
+
+      <!-- Realistic Mobile In-Frame Header (PaisaWapas on top in Mobile View) -->
+      <div class="device-pw-header" id="device-pw-header">
+        <div class="device-pw-header-inner">
+          <a href="https://www.paisawapas.com" target="_blank" rel="noopener" class="device-pw-logo-link" title="PaisaWapas">
+            <img src="assets/logo.svg" alt="PaisaWapas.com" class="device-pw-logo" width="130" height="28">
+          </a>
+          <div class="device-pw-status-pill">
+            <span class="pulse-dot"></span>
+            <span>Cashback Active</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pw-gateway-container" id="gateway-container">
+
+      <!-- ========================================================
+           LEFT COLUMN: Deal Summary (Only Relevant Info)
+           ======================================================== -->
+      <aside class="deal-showcase-column" id="deal-column">
+        <div class="deal-card" id="deal-card">
+          
+          <!-- Store Badge & Verified Tag -->
+          <div class="deal-card-header">
+            <div class="store-badge-wrap">
+              <span class="store-platform-badge" id="deal-store-badge">
+                <img src="assets/flipkart.svg" alt="Flipkart" class="store-logo-img" id="deal-store-logo">
+              </span>
+              <span class="verified-tag">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="#16a34a"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Verified Deal</span>
+              </span>
+            </div>
+            <span id="deal-category" style="display: none;">Smartphones & Electronics</span>
+          </div>
+
+          <!-- Product Image & Title -->
+          <div class="deal-product-row">
+            <div class="product-image-container">
+              <img src="assets/deal_iphone.jpg" alt="Apple iPhone 15" class="product-thumb" id="deal-product-image">
+              <span class="discount-badge" id="deal-discount-badge">21% OFF</span>
+            </div>
+
+            <div class="product-meta">
+              <h3 class="product-title" id="deal-title">Apple iPhone 15 (128 GB) - Black</h3>
+            </div>
+          </div>
+
+          <!-- Price & Cashback Breakdown -->
+          <div class="pricing-breakdown-card">
+            
+            <div class="price-row standard-price-row">
+              <span class="price-label">Deal Price:</span>
+              <div class="price-val-wrap">
+                <span class="mrp-strikethrough" id="deal-mrp">₹69,900</span>
+                <strong class="deal-price-val" id="deal-price">₹54,999</strong>
+              </div>
+            </div>
+
+            <!-- Cashback Row -->
+            <div class="cashback-highlight-row" id="cashback-banner">
+              <div class="cb-left">
+                <span class="cb-icon-circle">₹</span>
+                <div>
+                  <span class="cb-title">PaisaWapas Cashback</span>
+                  <span class="cb-sub">Direct wallet credit</span>
+                </div>
+              </div>
+              <div class="cb-amount-pill" id="deal-cashback-badge">
+                <span class="cb-plus">+</span>
+                <strong id="deal-cashback-amount">₹1,650</strong>
+                <small class="cb-rate" id="deal-cashback-rate">(3% Extra)</small>
+              </div>
+            </div>
+
+            <!-- Effective Final Price -->
+            <div class="effective-price-row">
+              <div class="eff-left">
+                <span class="eff-label">You Pay Effectively:</span>
+              </div>
+              <div class="eff-right">
+                <strong class="effective-price-val" id="deal-effective-price">₹53,349</strong>
+                <span class="savings-tag" id="deal-savings">Save ₹16,551</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Micro reassurance trust badge -->
+          <div class="deal-micro-trust">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#10b981"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Cashback automatically tracked &amp; credited to your wallet</span>
+          </div>
+
+          <!-- Collapsible Dropdown: Tracking & Transfer Guarantees -->
+          <details class="pw-accordion-details" id="guarantees-accordion">
+            <summary class="accordion-summary-btn">
+              <span class="summary-left">
+                <span class="summary-icon">🛡️</span>
+                <span class="summary-title">Tracking &amp; Transfer Guarantees</span>
+              </span>
+              <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="accordion-panel-body">
+              <div class="acc-guarantees-grid">
+                <div class="acc-guarantee-item">
+                  <span class="acc-g-icon">⚡</span>
+                  <div>
+                    <strong>Auto Tracks in 24-48h</strong>
+                    <p>Zero receipt uploads needed. Our affiliate engine matches your purchase automatically.</p>
+                  </div>
+                </div>
+                <div class="acc-guarantee-item">
+                  <span class="acc-g-icon">💸</span>
+                  <div>
+                    <strong>Direct Bank &amp; UPI Transfer</strong>
+                    <p>100% free transfer to your Bank Account, Google Pay, PhonePe, or Paytm.</p>
+                  </div>
+                </div>
+                <div class="acc-guarantee-item">
+                  <span class="acc-g-icon">🔒</span>
+                  <div>
+                    <strong>100% Safe &amp; Spam Free</strong>
+                    <p>Your number is encrypted and used solely for tracking your earned cashback.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+        </div>
+      </aside>
+
+      <!-- ========================================================
+           RIGHT COLUMN: Interactive Action Card (Clean & Focused)
+           ======================================================== -->
+      <section class="pw-card" id="main-card">
+        
+        <!-- STEP 1: Phone Submission View -->
+        <div class="flow-step-view active" id="view-step-phone">
+          
+          <div class="step-progress-indicator" id="step-indicator" style="display: none;">
+            <div class="progress-step-pill active" id="pill-step-1">
+              <span class="pill-number">1</span>
+              <span class="pill-label">Link Phone</span>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step-pill" id="pill-step-2">
+              <span class="pill-number">2</span>
+              <span class="pill-label">Activate</span>
+            </div>
+          </div>
+
+          <!-- Phone Heading -->
+          <h1 class="main-heading" id="form-heading">
+            Enter Mobile Number
+          </h1>
+          <p class="heading-sub-note" id="form-sub-note">
+            To link &amp; track <strong class="store-target-text" id="target-cashback-text">₹1,650 Flipkart Cashback</strong>
+          </p>
+
+          <form id="phone-form" class="phone-form" novalidate>
+            <div class="input-group-wrapper">
+              <div class="input-group" id="input-group">
+                <div class="country-code-pill" title="India (+91)">
+                  <span class="flag-icon" aria-hidden="true">🇮🇳</span>
+                  <span class="country-prefix">+91</span>
+                </div>
+                <input 
+                  type="tel" 
+                  id="phone-input" 
+                  name="phoneNumber" 
+                  class="phone-input" 
+                  placeholder="Enter Phone Number" 
+                  inputmode="numeric"
+                  autocomplete="tel-national"
+                  maxlength="11"
+                  aria-label="10-digit mobile phone number"
+                  required
+                >
+                <button type="button" id="clear-input-btn" class="clear-btn" aria-label="Clear phone input" style="display: none;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+              </div>
+              <div class="error-hint" id="phone-error" role="alert" aria-live="polite"></div>
+            </div>
+
+            <div class="action-wrap">
+              <button type="submit" id="submit-btn" class="btn btn-submit btn-deal-cta">
+                <span class="btn-text" id="submit-btn-text">Activate Cashback &amp; Proceed to Flipkart</span>
+                <span class="btn-loader" aria-hidden="true"></span>
+                <svg class="btn-arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </div>
+
+            <div class="meta-note" id="required-note">
+              <span class="lock-icon" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+              </span>
+              <span class="note-text">100% Free Cashback &bull; Safe &amp; Direct to Bank &bull; No Spam</span>
+            </div>
+          </form>
+
+          <!-- Minimal, 1-line Sign Up Link (Zero Clutter) -->
+          <div class="signup-minimal-prompt">
+            <span>New to PaisaWapas?</span>
+            <a 
+              href="https://www.paisawapas.com/auth/signup" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              id="signup-btn" 
+              class="signup-link-inline"
+              title="Create a free PaisaWapas account"
+            >
+              Sign Up Free 🚀
+            </a>
+          </div>
+
+          <!-- Collapsible Dropdown: 3 Steps to Claim Cashback -->
+          <details class="pw-accordion-details steps-accordion" id="steps-accordion">
+            <summary class="accordion-summary-btn">
+              <span class="summary-left">
+                <span class="summary-icon">📖</span>
+                <span class="summary-title">How does it work? (3 Simple Steps)</span>
+              </span>
+              <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="accordion-panel-body">
+              <ol class="accordion-steps-list">
+                <li class="acc-step-item">
+                  <span class="acc-step-badge">1</span>
+                  <div class="acc-step-text">
+                    <strong>Enter Phone Number</strong>
+                    <p>Enter your 10-digit number above to link your cashback account.</p>
+                  </div>
+                </li>
+                <li class="acc-step-item">
+                  <span class="acc-step-badge">2</span>
+                  <div class="acc-step-text">
+                    <strong>Shop on <span class="acc-store-name">Flipkart</span> as usual</strong>
+                    <p>Click the button to open the deal on Flipkart and place your order.</p>
+                  </div>
+                </li>
+                <li class="acc-step-item">
+                  <span class="acc-step-badge">3</span>
+                  <div class="acc-step-text">
+                    <strong>Get Extra Cashback Credited</strong>
+                    <p>Cashback tracks in 24-48h and is credited to your wallet for easy bank transfer!</p>
+                  </div>
+                </li>
+              </ol>
+              <div class="acc-signup-box">
+                <span>First time on PaisaWapas?</span>
+                <a href="https://www.paisawapas.com/auth/signup" target="_blank" rel="noopener noreferrer" class="acc-signup-link">
+                  Create Free Account in 30s ↗
+                </a>
+              </div>
+            </div>
+          </details>
+
+        </div>
+
+        <!-- ========================================================
+             STEP 2: OTP Verification Screen
+             ======================================================== -->
+        <div class="flow-step-view" id="view-step-otp" style="display: none;">
+          <div class="otp-view-header">
+            <button type="button" class="back-link-btn" id="otp-back-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              <span>Back</span>
+            </button>
+            <div class="otp-shield-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+          </div>
+
+          <h2 class="otp-title">Verify Phone Number</h2>
+          <p class="otp-subtitle">
+            Enter the 4-digit code sent to <strong id="otp-phone-preview">+91 98765 43210</strong>
+            <button type="button" class="change-number-link" id="otp-edit-phone">Edit</button>
+          </p>
+
+          <!-- Quick Test Demo Code Pill -->
+          <div class="demo-otp-pill" id="demo-otp-pill" title="Click to quickly autofill demo OTP">
+            <span>💡 Demo OTP: <strong>1234</strong> (Tap to Auto-fill) ✨</span>
+          </div>
+
+          <form id="otp-form" class="otp-form" novalidate>
+            <div class="otp-inputs-row" id="otp-inputs-container">
+              <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" data-index="0" autofocus>
+              <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]*" data-index="1">
+              <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]*" data-index="2">
+              <input type="text" class="otp-box" maxlength="1" inputmode="numeric" pattern="[0-9]*" data-index="3">
+            </div>
+
+            <div class="error-hint" id="otp-error" role="alert" aria-live="polite"></div>
+
+            <button type="submit" id="verify-otp-btn" class="btn btn-submit btn-verify-full">
+              <span class="btn-text">Verify & Activate Deal</span>
+              <span class="btn-loader" aria-hidden="true"></span>
+            </button>
+          </form>
+
+          <div class="resend-row">
+            <span class="resend-timer-text" id="resend-timer-label">Resend OTP in <strong id="resend-timer">00:30</strong></span>
+            <button type="button" class="resend-btn" id="resend-btn" disabled>Resend Code</button>
+          </div>
+        </div>
+
+        <!-- ========================================================
+             STEP 3: Deal Cashback Activated & Redirecting to Store!
+             ======================================================== -->
+        <div class="flow-step-view" id="view-step-success" style="display: none;">
+          <div class="success-screen-card">
+            <div class="success-badge-ring">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+
+            <div class="activated-badge-pill">
+              <span>🎉 Cashback Tracking Activated!</span>
+            </div>
+
+            <h2 class="success-title">Redirecting to <span id="redirect-store-name">Flipkart</span>...</h2>
+            
+            <p class="success-desc">
+              Your phone number <strong id="success-phone-display">+91 98765 43210</strong> has been linked. You will earn <strong id="success-cashback-display">₹1,650 Cashback</strong> once you complete the purchase.
+            </p>
+
+            <!-- Progress countdown bar -->
+            <div class="redirect-countdown-wrap">
+              <div class="redirect-progress-bar">
+                <div class="redirect-progress-fill" id="redirect-progress"></div>
+              </div>
+              <span class="countdown-text">Redirecting automatically in <strong id="countdown-seconds">3</strong>s</span>
+            </div>
+
+            <div class="success-actions">
+              <a href="https://www.flipkart.com" target="_blank" rel="noopener" class="btn btn-submit btn-deal-cta" id="proceed-store-link">
+                <span>Continue to <span id="btn-store-name">Flipkart</span> Deal Now</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <button type="button" class="btn-text-link" id="reset-flow-btn">
+                Link a different phone number
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      </div>
+
+      <!-- Home bar indicator for realistic mobile phone preview -->
+      <div class="device-home-bar" id="device-home-bar" aria-hidden="true"></div>
+
+    </div>
+
+    <!-- Security & Trust Footer -->
+    <footer class="page-footer">
+      <div class="trust-guarantee">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>100% Free Cashback &bull; Official PaisaWapas Affiliate Tracking Guarantee</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ========================================================
+       Floating Customizer & API Config Drawer
+       ======================================================== -->
+  <aside class="ui-panel-drawer" id="ui-panel">
+    <button type="button" class="panel-toggle-btn" id="panel-toggle" aria-label="Toggle UI settings">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+      </svg>
+      <span>Controls & Deals</span>
+    </button>
+
+    <div class="panel-content">
+      <div class="panel-header">
+        <h4>Deal Gateway Settings</h4>
+        <button type="button" class="panel-close-btn" id="panel-close">&times;</button>
+      </div>
+      <p class="panel-intro">Preview different deals and customize the outclick experience:</p>
+
+      <div class="panel-section">
+        <label class="control-label">Switch Deal:</label>
+        <div class="radio-toggle-group">
+          <button type="button" class="deal-select-btn active" data-deal="flipkart-iphone">Flipkart - iPhone 15 (₹1,650 Cashback)</button>
+          <button type="button" class="deal-select-btn" data-deal="myntra-nike">Myntra - Nike Shoes (₹500 Cashback)</button>
+          <button type="button" class="deal-select-btn" data-deal="amazon-sony">Amazon - Sony ANC (₹1,250 Cashback)</button>
+          <button type="button" class="deal-select-btn" data-deal="swiggy-food">Swiggy - Gourmet (Flat ₹60 Cashback)</button>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <label class="control-label">View Mode:</label>
+        <div class="radio-toggle-group">
+          <button type="button" class="preset-btn active" data-preset="web">Web (Desktop View)</button>
+          <button type="button" class="preset-btn" data-preset="mobile">Mobile (Smartphone View)</button>
+          <button type="button" class="preset-btn" data-preset="dark">Dark Mode</button>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <label class="control-label">Backend API Mode:</label>
+        <div class="api-switch-row">
+          <label class="switch-wrap">
+            <input type="checkbox" id="toggle-mock-api" checked>
+            <span class="switch-slider"></span>
+          </label>
+          <span id="api-mode-label" class="api-status-badge mock">Simulated Mock API (OTP: 1234)</span>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <label class="control-label">Quick Jump to Step:</label>
+        <div class="quick-jump-grid">
+          <button type="button" class="jump-btn" id="jump-step-phone">1. Phone</button>
+          <button type="button" class="jump-btn" id="jump-step-otp">2. OTP</button>
+          <button type="button" class="jump-btn" id="jump-step-success">3. Redirect</button>
+        </div>
+      </div>
+
+      <div class="panel-footer-note">
+        You can also pass query params: <br>
+        <code>?store=flipkart&deal=iPhone+15&price=54999&cashback=1650</code>
+      </div>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>

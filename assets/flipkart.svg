@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="none">
+  <!-- Flipkart Blue Cart & Yellow Tag -->
+  <rect x="2" y="4" width="32" height="32" rx="8" fill="#2874F0"/>
+  <path d="M12 12h14v16H12z" fill="#FFE500" rx="3"/>
+  <path d="M15 16h8M15 20h6M15 24h4" stroke="#2874F0" stroke-width="2" stroke-linecap="round"/>
+  <text x="42" y="27" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-weight="800" font-size="22" fill="#2874F0" letter-spacing="-0.5">Flipkart</text>
+  <text x="126" y="27" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-weight="700" font-size="16" fill="#F59E0B" font-style="italic">Plus</text>
+</svg>
